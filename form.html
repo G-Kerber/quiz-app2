@@ -6,24 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Quiz-App</title>
     <link rel="stylesheet" href="./styles.css" />
+    <script src="./js/form.js" defer></script>
   </head>
   <body>
     <main>
       <form data-js="form" class="form">
         <label for="your-question">Your Question</label>
-        <textarea
-          type="text"
-          name="yourQuestion"
-          id="your-question"
-          required
-        ></textarea>
+        <textarea name="yourQuestion" id="your-question" required></textarea>
         <label for="your-answer">Your answer</label>
-        <textarea
-          type="text"
-          name="yourAnswer"
-          id="your-answer"
-          required
-        ></textarea>
+        <textarea name="yourAnswer" id="your-answer" required></textarea>
         <label for="questionTag">Tag:</label>
         <input
           type="text"
@@ -33,7 +24,7 @@
           minlength="4"
           maxlength="30"
         />
-        <button type="submit">Submit</button>
+        <button type="submit" class="form__button">Submit</button>
       </form>
     </main>
 
