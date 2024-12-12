@@ -1,5 +1,32 @@
 const form = document.querySelector('[data-js="form"]');
 
+const questionInput = document.querySelector('[data-js="questionInput"]');
+const answerInput = document.querySelector('[data-js="answerInput"]');
+const questionInputCounter = document.querySelector(
+  '[data-js="questionInputCounter"]'
+);
+const answerInputCounter = document.querySelector(
+  '[data-js="answerInputCounter"]'
+);
+const questionInputLengthMax = 150;
+const answerInputLengthMax = 150;
+questionInputCounter.textContent = questionInputLengthMax + " character left";
+answerInputCounter.textContent = answerInputLengthMax + " character left";
+
+questionInput.addEventListener("input", (event) => {
+  event.preventDefault();
+  let questionInputLength = event.target.value.length;
+  questionInputCounter.textContent =
+    questionInputLengthMax - questionInputLength + " character left";
+});
+
+answerInput.addEventListener("input", (event) => {
+  event.preventDefault();
+  let answerInputLength = event.target.value.length;
+  answerInputCounter.textContent =
+    answerInputLengthMax - answerInputLength + " character left";
+});
+
 form.addEventListener("submit", (event) => {
   event.preventDefault();
 

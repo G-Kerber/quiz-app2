@@ -12,17 +12,30 @@
     <main>
       <form data-js="form" class="form">
         <label for="your-question">Your Question</label>
-        <textarea name="yourQuestion" id="your-question" required></textarea>
+        <textarea
+          name="yourQuestion"
+          id="your-question"
+          maxlength="150"
+          required
+          data-js="questionInput"
+        ></textarea>
+        <p data-js="questionInputCounter"></p>
         <label for="your-answer">Your answer</label>
-        <textarea name="yourAnswer" id="your-answer" required></textarea>
+        <textarea
+          name="yourAnswer"
+          id="your-answer"
+          maxlength="150"
+          required
+          data-js="answerInput"
+        ></textarea>
+        <p data-js="answerInputCounter"></p>
         <label for="questionTag">Tag:</label>
         <input
           type="text"
           name="questionTag"
           id="question-Tag"
+          minlength="2"
           required
-          minlength="4"
-          maxlength="30"
         />
         <button type="submit" class="form__button">Submit</button>
       </form>
