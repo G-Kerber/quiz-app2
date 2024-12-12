@@ -9,38 +9,43 @@
     <script src="./js/form.js" defer></script>
   </head>
   <body>
+    <header class="header">
+      <h1 class="header__title">Create Cards</h1>
+    </header>
     <main>
-      <form data-js="form" class="form">
-        <label for="your-question">Your Question</label>
-        <textarea
-          name="yourQuestion"
-          id="your-question"
-          maxlength="150"
-          required
-          data-js="questionInput"
-        ></textarea>
-        <p class="form__characterLeft" data-js="questionInputCounter"></p>
-        <label for="your-answer">Your answer</label>
-        <textarea
-          name="yourAnswer"
-          id="your-answer"
-          maxlength="150"
-          required
-          data-js="answerInput"
-        ></textarea>
-        <p class="form__characterLeft" data-js="answerInputCounter"></p>
-        <label for="questionTag">Tag:</label>
-        <input
-          type="text"
-          name="questionTag"
-          id="question-Tag"
-          minlength="2"
-          required
-        />
-        <div class="form__divButton">
-          <button type="submit" class="form__button">Submit</button>
-        </div>
-      </form>
+      <div class="form__box">
+        <form data-js="form" class="form">
+          <label for="your-question">Your Question</label>
+          <textarea
+            name="yourQuestion"
+            id="your-question"
+            maxlength="150"
+            required
+            data-js="questionInput"
+          ></textarea>
+          <p class="form__characterLeft" data-js="questionInputCounter"></p>
+          <label for="your-answer">Your answer</label>
+          <textarea
+            name="yourAnswer"
+            id="your-answer"
+            maxlength="150"
+            required
+            data-js="answerInput"
+          ></textarea>
+          <p class="form__characterLeft" data-js="answerInputCounter"></p>
+          <label for="questionTag">Tag:</label>
+          <input
+            type="text"
+            name="questionTag"
+            id="question-Tag"
+            minlength="2"
+            required
+          />
+          <div class="form__divButton">
+            <button type="submit" class="form__button">Submit</button>
+          </div>
+        </form>
+      </div>
     </main>
 
     <nav class="navigation">

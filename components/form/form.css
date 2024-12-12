@@ -5,6 +5,14 @@
   gap: 10 px;
 }
 
+.form__box {
+  padding: 10rem 2rem 4rem 2rem;
+  max-width: 45rem;
+  margin: 0 auto;
+}
+.form__characterLeft {
+  text-align: right;
+}
 .form__divButton {
   display: flex;
   justify-content: center;
@@ -13,8 +21,4 @@
 .form__button {
   margin-top: 2em;
   width: 50%;
-}
-
-.form__characterLeft {
-  text-align: right;
 }

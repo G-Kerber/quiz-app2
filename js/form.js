@@ -39,6 +39,9 @@ answerInput.addEventListener("input", (event) => {
 });
 
 function createNewCard(data) {
+  const main = document.querySelector("main");
+  const ul0 = document.createElement("ul");
+  const li0 = document.createElement("li");
   const article = document.createElement("article");
   const button = document.createElement("button");
   const h2 = document.createElement("h2");
@@ -60,7 +63,12 @@ function createNewCard(data) {
   const buttonLabel = "Hide answer";
 
   //create article
-  document.body.append(article);
+  main.append(article);
+  // main.append(ul0);
+  // ul0.classList.add("card-list");
+  // ul0.append(li0);
+  // li0.classList.add("class-list__item");
+  // li0.append(article);
   article.classList.add("card");
 
   //create article.h2
