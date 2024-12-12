@@ -13,18 +13,30 @@ const answerInputLengthMax = 150;
 questionInputCounter.textContent = questionInputLengthMax + " character left";
 answerInputCounter.textContent = answerInputLengthMax + " character left";
 
+function calculateCharacterLeft(InputLength, InputLengthMax) {
+  return InputLengthMax - InputLength + " character left";
+}
+
 questionInput.addEventListener("input", (event) => {
   event.preventDefault();
   let questionInputLength = event.target.value.length;
-  questionInputCounter.textContent =
-    questionInputLengthMax - questionInputLength + " character left";
+  let InputLengthMax = questionInputLengthMax;
+  let InputLength = questionInputLength;
+  questionInputCounter.textContent = calculateCharacterLeft(
+    InputLength,
+    InputLengthMax
+  );
 });
 
 answerInput.addEventListener("input", (event) => {
   event.preventDefault();
   let answerInputLength = event.target.value.length;
-  answerInputCounter.textContent =
-    answerInputLengthMax - answerInputLength + " character left";
+  let InputLengthMax = answerInputLengthMax;
+  let InputLength = answerInputLength;
+  answerInputCounter.textContent = calculateCharacterLeft(
+    InputLength,
+    InputLengthMax
+  );
 });
 
 form.addEventListener("submit", (event) => {
@@ -42,8 +54,12 @@ form.addEventListener("submit", (event) => {
   const li = document.createElement("li");
   const div = document.createElement("div");
   const bookmark = document.createElement("button");
-  const svg = document.createElement("svg");
-  const path = document.createElement("path");
+  bookmark.innerHTML = `<svg
+                  class="bookmark__icon"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewbox="0 0 24 24">
+                  <path d="M17 3H7c-1.1 0-2 .9-2 2v16l7-3 7 3V5c0-1.1-.9-2-2-2z"/>
+                </svg>`;
 
   const question = data.yourQuestion;
   const answer = data.yourAnswer;
@@ -84,15 +100,4 @@ form.addEventListener("submit", (event) => {
   bookmark.setAttribute("aria-label", "bookmark");
   bookmark.setAttribute("type", "button");
   bookmark.setAttribute("data-js", "bookmark");
-
-  bookmark.append(svg);
-  svg.classList.add("bookmark__icon");
-  svg.setAttribute("xmlns", "http://www.w3.org/2000/svg");
-  svg.setAttribute("viewbox", "0 0 24 24");
-
-  svg.append(path);
-  path.setAttribute(
-    "d",
-    "M17 3H7c-1.1 0-2 .9-2 2v16l7-3 7 3V5c0-1.1-.9-2-2-2z"
-  );
 });
