@@ -5,7 +5,16 @@
   gap: 10 px;
 }
 
+.form__divButton {
+  display: flex;
+  justify-content: center;
+}
+
 .form__button {
   margin-top: 2em;
   width: 50%;
+}
+
+.form__characterLeft {
+  text-align: right;
 }
