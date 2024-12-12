@@ -14,14 +14,14 @@ questionInputCounter.textContent = questionInputLengthMax + " character left";
 answerInputCounter.textContent = answerInputLengthMax + " character left";
 
 function calculateCharacterLeft(InputLength, InputLengthMax) {
-  return InputLengthMax - InputLength + " character left";
+  let CharacterLeft = InputLengthMax - InputLength + " character left";
+  return CharacterLeft;
 }
 
 questionInput.addEventListener("input", (event) => {
   event.preventDefault();
-  let questionInputLength = event.target.value.length;
+  let InputLength = event.target.value.length;
   let InputLengthMax = questionInputLengthMax;
-  let InputLength = questionInputLength;
   questionInputCounter.textContent = calculateCharacterLeft(
     InputLength,
     InputLengthMax
@@ -30,9 +30,8 @@ questionInput.addEventListener("input", (event) => {
 
 answerInput.addEventListener("input", (event) => {
   event.preventDefault();
-  let answerInputLength = event.target.value.length;
+  let InputLength = event.target.value.length;
   let InputLengthMax = answerInputLengthMax;
-  let InputLength = answerInputLength;
   answerInputCounter.textContent = calculateCharacterLeft(
     InputLength,
     InputLengthMax
@@ -45,7 +44,6 @@ form.addEventListener("submit", (event) => {
   const formData = new FormData(event.target);
   const data = Object.fromEntries(formData);
 
-  console.log(data);
   const article = document.createElement("article");
   const button = document.createElement("button");
   const h2 = document.createElement("h2");
@@ -65,8 +63,6 @@ form.addEventListener("submit", (event) => {
   const answer = data.yourAnswer;
   const tag = data.questionTag;
   const buttonLabel = "Hide answer";
-  console.log(question);
-  console.log(tag);
 
   document.body.append(article);
   article.classList.add("card");
